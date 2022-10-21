@@ -55,6 +55,7 @@ def fraction_difference(list):
 list = fill_list()
 print(list)
 fraction_difference(list)
+
 '''
 
 # Напишите программу, которая будет преобразовывать десятичное число в двоичное.
