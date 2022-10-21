@@ -25,7 +25,6 @@ def number_multiply(list):
 list = fill_list()
 print(list)
 number_multiply(list)
-
 ''' 
 # Задайте список из вещественных чисел. Напишите программу, которая найдёт разницу между максимальным и минимальным значением дробной части элементов.
 
@@ -64,6 +63,7 @@ fraction_difference(list)
 # - 45 -> 101101
 # - 3 -> 11
 # - 2 -> 10
+
 '''
 def to_bin(num):
     bin = []
@@ -74,15 +74,24 @@ def to_bin(num):
 
 num = int(input('Введите число '))
 to_bin(num)
-'''
 
+'''
 # Задайте число N. Составьте список чисел Фибоначчи, N - количество чисел в списке
 
+'''
 def Fib(N):
     list = [0, 1]
-    while N > 2:
-        list.append(list[-2] + list[-1])
-        N -= 1
-    return list
+    if N >= 0: 
+        while N > 2:
+            list.append(list[-2] + list[-1])
+            N -= 1
+        return list
+    else:    
+        while N < -1:
+            list.insert(0, list[1] - list[0])
+            N += 1
+        return list
 
-print(Fib(11))
+print(Fib(int(input('введите число '))))
+
+'''
