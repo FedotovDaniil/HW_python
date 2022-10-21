@@ -1,3 +1,4 @@
+from calendar import c
 import random
 
 # Напишите программу, которая найдёт произведение пар чисел списка. Парой считаем первый и последний элемент, второй и предпоследний и т.д.
@@ -31,29 +32,30 @@ number_multiply(list)
 # Пример:
 
 # - [1.1, 1.2, 3.1, 5, 10.01] => 0.19
-
-
-
+'''
 def fill_list():
     list = []
     for i in range(7):
-        list.append(random .uniform(1, 10))
+        list.append(random .uniform(1, 10).__round__(2))
     return list
 
 def fraction_difference(list):
     min = 1
     max = 0
-    
+     
     for i in list:
-        list[i] % i
-        if list[i] < min:
-            min = list[i]
-        if list[i] > max:
-            max = list[i]
+        k = (i % 1).__round__(2)
+        if k < min:
+            min = k
+        if k > max:
+            max = k
+    print(min, max)
+    print(max - min)
 
 list = fill_list()
-print(format(list, '.2f'))
-
+print(list)
+fraction_difference(list)
+'''
 
 # Напишите программу, которая будет преобразовывать десятичное число в двоичное.
 
@@ -62,6 +64,25 @@ print(format(list, '.2f'))
 # - 45 -> 101101
 # - 3 -> 11
 # - 2 -> 10
+'''
+def to_bin(num):
+    bin = []
+    while num > 0:
+        bin.insert(0, num % 2)
+        num = num // 2
+    print(bin)
 
+num = int(input('Введите число '))
+to_bin(num)
+'''
 
 # Задайте число N. Составьте список чисел Фибоначчи, N - количество чисел в списке
+
+def Fib(N):
+    list = [0, 1]
+    while N > 2:
+        list.append(list[-2] + list[-1])
+        N -= 1
+    return list
+
+print(Fib(11))
